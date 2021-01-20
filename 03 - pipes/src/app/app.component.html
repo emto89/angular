@@ -12,6 +12,11 @@
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td>{{nombre2}}</td>
+            <td>capitalizado</td>
+            <td>{{ nombre2 | capitalizado:true }}</td>
+         </tr>
           <!-- UTILIZANDO PIPE UPPERCASE  -->
              <tr>
                 <td>{{nombre}}</td>
@@ -119,6 +124,32 @@
           <td>{{ fecha | date:'MMMM - dd':'':'br'}}</td>
          </tr>
         
+          
+         <tr>
+          <td>{{ fecha }}</td>
+          <td>
+            Date:'MMMM - dd':'':'{{ idioma }}'
+          </td>
+          <td>{{ fecha | date:'MMMM - dd':'':idioma}}
+            <br>
+            <button (click)="idioma ='es'" class="mr-1 btn btn-primary">Español</button>
+            <button (click)="idioma ='en'" class="mr-1 btn btn-secondary">Ingles</button>
+            <button (click)="idioma ='br'" class="mr-1 btn btn-success">Brazil</button>
+          </td>
+         </tr>
+        
+         <tr>
+          <td>{{ nombre }}</td>
+          <td>Contrasena:
+            <br>
+            <button
+            class="btn btn-outline-info">
+              Activar/Desactivar
+            </button>
+          </td>
+          <td>{{ nombre }}</td>
+         </tr>
+
          <h4>Slice</h4>
          <ul>
            <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li>
@@ -135,5 +166,13 @@
 
         </tbody>
      </table>
+  </div>
+
+  <h3 class="mt-4"> DOMSEGURO</h3>
+  <hr>
+  <div class="row mb-4">
+     <div class="col">
+      <iframe width="560" height="315" [src]="video | domseguro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     </div>
   </div>
 </div>

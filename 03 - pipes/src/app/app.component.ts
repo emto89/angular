@@ -9,6 +9,8 @@ export class AppComponent {
 
   nombre: string = "Martin Diaz";
 
+  nombre2: string = "MaRtIn DiAz";
+
   arreglo: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   PI: number = Math.PI;
@@ -18,7 +20,11 @@ export class AppComponent {
   salario: number = 123456;
 
   fecha: Date = new Date();
+
+  idioma: string = "es";
   
+  video = "https://www.youtube.com/embed/rOax50EDIZQ";
+
   valorPromesa = new Promise<String>((resolve,reject) =>{
     setTimeout(() => {
       resolve('Llego la informacion');
