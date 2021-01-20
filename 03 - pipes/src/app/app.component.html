@@ -1,0 +1,139 @@
+<h1><small class="mt-3">Pipes</small> Angular</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+     <table class="table">
+        <thead class="table">
+          <tr>
+             <th>Variable</th>
+             <th>Pipe</th>
+             <th>Salida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- UTILIZANDO PIPE UPPERCASE  -->
+             <tr>
+                <td>{{nombre}}</td>
+                <td>uppercase</td>
+                <td>{{ nombre | uppercase }}</td>
+             </tr>
+             <!-- UTILIZANDO PIPE LOWERCASE -->
+             <tr>
+              <td>{{nombre}}</td>
+              <td>lowercase</td>
+              <td>{{ nombre | lowercase }}</td>
+           </tr>
+            <!-- UTILIZANDO PIPE SLICE  SOLO EL INICIO -->
+            <tr>
+              <td>{{nombre}}</td>
+              <td>slice:3</td>
+              <td>{{ nombre | slice:3 }}</td>
+           </tr>
+           <!-- UTILIZANDO PIPE SLICE USANDO INICIO Y FINAL -->
+           <tr>
+            <td>{{nombre}}</td>
+            <td>slice:0:3</td>
+            <td>{{ nombre | slice:0:3 }}</td>
+         </tr>
+          <!-- UTILIZANDO PIPE SLICE USANDO INICIO Y FINAL sobre arreglo-->
+          <tr>
+            <td>{{arreglo}}</td>
+            <td>slice:1:5</td>
+            <td>{{ arreglo | slice:1:20 }}</td>
+         </tr>
+         <!-- UTILIZANDO PIPE SLICE USANDO INICIO Y FINAL sobre arreglo-->
+         <tr>
+          <td>{{PI}}</td>
+          <td>number</td>
+          <td>{{ PI | number:'1.0-0' }}</td>
+       </tr>
+        <!-- UTILIZANDO PIPE SLICE USANDO INICIO Y FINAL sobre arreglo-->
+        <tr>
+          <td>{{PI}}</td>
+          <td>number</td>
+          <td>{{ PI | number:'1.2-3' }}</td>
+       </tr>
+       <!-- UTILIZANDO PIPE SLICE USANDO INICIO Y FINAL sobre arreglo-->
+       <tr>
+        <td>{{porcentaje}}</td>
+        <td>percent</td>
+        <td>{{ porcentaje | percent }}</td>
+       </tr>
+        <!-- UTILIZANDO PIPE SLICE USANDO INICIO Y FINAL sobre arreglo-->
+        <tr>
+          <td>{{porcentaje}}</td>
+          <td>percent</td>
+          <td>{{ porcentaje | percent:'2.2-4' }}</td>
+         </tr>
+         <tr>
+          <td>{{ salario }}</td>
+          <td>currency</td>
+          <td>{{ salario | currency }}</td>
+         </tr>
+         <tr>
+          <tr>
+            <td>{{ salario }}</td>
+            <td>currency:'COP'</td>
+            <td>{{ salario | currency:'COP' }}</td>
+           </tr>
+           <tr>
+          <td>{{ salario }}</td>
+          <td>currency:'CAD':'symbol-narrow':'.0-0'</td>
+          <td>{{ salario | currency:'CAD':'symbol-narrow':'.0-0' }}</td>
+         </tr>
+
+         <tr>
+          <td>{{ valorPromesa }}</td>
+          <td>async</td>
+          <td>{{ valorPromesa | async}}</td>
+         </tr>
+
+         <tr>
+          <td>{{ fecha }}</td>
+          <td>Date</td>
+          <td>{{ fecha | date}}</td>
+         </tr>
+
+         <tr>
+          <td>{{ fecha }}</td>
+          <td>Date:'medium'</td>
+          <td>{{ fecha | date:'medium'}}</td>
+         </tr>
+
+         <tr>
+          <td>{{ fecha }}</td>
+          <td>Date:'short'</td>
+          <td>{{ fecha | date:'short'}}</td>
+         </tr>
+
+         <tr>
+          <td>{{ fecha }}</td>
+          <td>Date:'MMMM - dd'</td>
+          <td>{{ fecha | date:'MMMM - dd'}}</td>
+         </tr>
+
+         <tr>
+          <td>{{ fecha }}</td>
+          <td>Date:'MMMM - dd'</td>
+          <td>{{ fecha | date:'MMMM - dd':'':'br'}}</td>
+         </tr>
+        
+         <h4>Slice</h4>
+         <ul>
+           <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li>
+         </ul>
+
+          <h3 class="mt-3">JSON</h3>
+          <hr>
+          <div class="row mb-5">
+             <div class="col">
+               <pre>{{ heroe | json}}</pre>
+             </div>
+          </div>
+
+
+        </tbody>
+     </table>
+  </div>
+</div>
