@@ -24,6 +24,8 @@ export class AppComponent {
   idioma: string = "es";
   
   video = "https://www.youtube.com/embed/rOax50EDIZQ";
+  
+  activar: boolean = true;
 
   valorPromesa = new Promise<String>((resolve,reject) =>{
     setTimeout(() => {

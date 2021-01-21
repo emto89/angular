@@ -140,14 +140,14 @@
         
          <tr>
           <td>{{ nombre }}</td>
-          <td>Contrasena:
+          <td>Contrasena: {{activar}}
             <br>
-            <button
+            <button (click)="activar = !activar"
             class="btn btn-outline-info">
               Activar/Desactivar
             </button>
           </td>
-          <td>{{ nombre }}</td>
+          <td>{{ nombre | contrasena:activar}}</td>
          </tr>
 
          <h4>Slice</h4>
