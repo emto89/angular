@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 export class HeroesComponent implements OnInit {
 
   heroes: HeroeModel[] = [];
-  cargando = false;
+  cargando = true;
 
   constructor( private _heroeServices: HeroesService) { }
 
