@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col">
+        <input  (keyup)="buscar(termino.value)" #termino  type="text" class="form-control" placeholder="Busqueda...">
+    </div>
+</div>
+
+<div class="card-columns m-5 animated fadeIn">
+    <div class="card puntero" *ngFor="let cancion of artistas">
+      <img class="card-img-top" [src]="cancion.images | noimage" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ cancion.name }}</h5>
+        <p class="card-text">
+          <span *ngFor="let artista of cancion.artists" class="badge badge-pill badge-primary">
+             {{ artista.name}}
+          </span>
+        </p>
+      </div>
+    </div>
+</div>
