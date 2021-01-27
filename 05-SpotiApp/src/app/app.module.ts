@@ -12,6 +12,9 @@ import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarejaComponent } from './components/tareja/tareja.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     SearchComponent,
     NavbarComponent,
     ArtistaComponent,
-    NoimagePipe
+    NoimagePipe,
+    TarejaComponent,
+    DomseguroPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

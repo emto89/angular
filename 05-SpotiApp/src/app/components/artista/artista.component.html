@@ -1,1 +1,47 @@
-<p>artista works!</p>
+<div class="row animated fadeIn">
+    <div class="col-2">
+        <img [src]="artista.images | noimage" class="img-thumbnail img-circle" alt="">
+    </div>
+    <div class="col">
+        <h3> {{artista.name }} </h3>
+        <p>
+            <a [href]="artista.external_urls.spotify" target="_blank">
+                Ir a la pagina del artista
+            </a>
+        </p>
+    </div>
+    <div class="col-4 text-right">
+        <button routerLink="/search" class="btn btn-outline-danger">
+            Regresar
+        </button>
+    </div>
+</div>
+
+<div class="row m-5">
+    <div class="col">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">Album</th>
+                <th scope="col">Cancion</th>
+                <th scope="col">Vista Previa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let track of topTracks">
+                <td>
+                    <img [src]="track.album.images | noimage" class="img-thumb" alt="">
+                </td>
+                <td>{{ track.album.name}}</td>
+                <td>{{ track.name}}</td>
+                <td>
+                    <!-- <audio [src]="track.preview_url" controls></audio> -->
+                    <iframe [src]="track.uri | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <!-- <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<!-- <p [ngStyle]="{'font-size': '25px'}">
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a placeat fuga ea aspernatur iure fugiat odio. Qui fugit rem sapiente hic, illum pariatur! Ipsam voluptatum consequuntur tenetur eos quisquam!
+</p>
+          font-size
+<p [style.fontSize]="'18px'">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a placeat fuga ea aspernatur iure fugiat odio. Qui fugit rem sapiente hic, illum pariatur! Ipsam voluptatum consequuntur tenetur eos quisquam!
+</p>
+
+<p [style.fontSize.px]="30">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a placeat fuga ea aspernatur iure fugiat odio. Qui fugit rem sapiente hic, illum pariatur! Ipsam voluptatum consequuntur tenetur eos quisquam!
+</p> -->
+<p [style.fontSize.px]="tamano">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a placeat fuga ea aspernatur iure fugiat odio. Qui fugit rem sapiente hic, illum pariatur! Ipsam voluptatum consequuntur tenetur eos quisquam!
+</p>
+<button class="btn btn-primary" (click)="tamano = tamano + 5">
+    <i class="fa fa-plus"></i>
+</button>
+<button class="btn btn-success" (click)="tamano = tamano - 5">
+    <i class="fa fa-minus"></i>
+</button>
