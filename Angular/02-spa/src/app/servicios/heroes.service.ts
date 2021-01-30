@@ -9,7 +9,7 @@ export class HeroesService {
       bio: "El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, la cual puede convocar a grandes distancias.",
       img: "assets/img/aquaman.png",
       aparicion: "1941-11-01",
-      casa:"DC"
+      casa: "DC"
     },
     {
       nombre: "Batman",
@@ -78,7 +78,7 @@ export class HeroesService {
       let nombre = heroe.nombre.toLowerCase();
 
       if( nombre.indexOf( termino ) >= 0  ){
-        // heroe.idx = i;
+        heroe.idx = i;
         heroesArr.push( heroe )
       }
 
@@ -95,5 +95,5 @@ export interface Heroe{
   img: string;
   aparicion: string;
   casa: string;
-
+  idx?: number;
 }
