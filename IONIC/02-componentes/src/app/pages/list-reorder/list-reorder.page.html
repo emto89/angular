@@ -22,9 +22,8 @@
 
   <ion-list>
 
-    <!-- <ion-reorder-group [disabled]="reorderDisabled"
-                       (ionItemReorder)=" doReorder( $event ) "> -->
-    <ion-reorder-group disabled="false" (ionItemReorder)=" doReorder( $event )">
+    <ion-reorder-group [disabled]="reorderDisabled"
+                       (ionItemReorder)=" doReorder( $event ) ">
 
       <ion-item *ngFor="let personaje of personajes">
         <ion-label>{{ personaje }}</ion-label>

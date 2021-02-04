@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { Observable } from 'rxjs';
 
-import { Componente } from './interface/interfaces';
+import { Componente } from './interfaces/interfaces';
 import { DataService } from './services/data.service';
 
 @Component({

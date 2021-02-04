@@ -1,40 +1,46 @@
 <ion-header>
   <ion-toolbar>
 
-
-
     <ion-buttons slot="start">
-          <ion-back-button defaultHref="/"></ion-back-button>
-   </ion-buttons>
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
 
-    <ion-title>avatar</ion-title>
+    <ion-title color="primary">Avatar</ion-title>
 
-   <ion-buttons slot="end">
-    <ion-avatar>
-      <!-- <img src="/assets/avatar.jpg" /> -->
-      <ion-img src="/assets/avatar.jpg"></ion-img>
-    </ion-avatar>
-   </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <!-- <img src="/assets/avatar.jpg" /> -->
+        <ion-img src="/assets/avatar.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-chip color="secondary" mode="ios" *ngFor="let item of [1,1,1,1,1,1]">
+  <ion-chip color="primary" outline="true"
+            *ngFor="let item of [1,1,1,1,1]">
     <ion-avatar>
-      <ion-img src="/assets/avatar.jpg"></ion-img>
+      <img src="/assets/avatar.jpg" />
     </ion-avatar>
-     <ion-label>Avatar</ion-label>
+    <ion-label>Default</ion-label>
   </ion-chip>
 
+
   <ion-list>
-     <ion-item *ngFor="let item of [1,1,1,1,1]">
+    <ion-item *ngFor="let item of [1,1,1,1,1,1,1,1,1,1]">
+
       <ion-avatar slot="start">
-        <ion-img src="/assets/avatar.jpg"></ion-img>
+        <img src="/assets/avatar.jpg" />
       </ion-avatar>
-       <ion-label>Avatar</ion-label>
-     </ion-item>
+
+      <ion-label>Avatar</ion-label>
+
+
+    </ion-item>
   </ion-list>
+
 
 </ion-content>

@@ -1,14 +1,18 @@
 <ion-header class="ion-no-border" translucent>
   <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-back-button 
-      defaultHref="/" 
-      text="Atras"
-      color="tertiary"
-      mode="ios"
-      ></ion-back-button>
-   </ion-buttons>
-    <ion-title>{{ titulo }}</ion-title>
-  </ion-toolbar>
-</ion-header>
+    
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text="Regresar"
+        color="primary">
+      </ion-back-button>
+    </ion-buttons>
 
+
+    <ion-title class="ion-text-capitalize">
+      {{ titulo }}
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header> 

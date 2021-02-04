@@ -8,49 +8,48 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class ActionSheetPage implements OnInit {
 
-  constructor(private actionSheetController: ActionSheetController) { }
+  constructor( private actionSheetCtrl: ActionSheetController ) { }
 
   ngOnInit() {
   }
- 
-  showAction() {
+
+  onClick() {
     this.presentActionSheet();
   }
 
   async presentActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'Menu Especial',
-      cssClass: 'my-custom-class',
-      backdropDismiss:false,
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Albumes',
+      backdropDismiss: false,
       buttons: [{
         text: 'Delete',
         role: 'destructive',
-        cssClass:'rojo',
-        icon: 'trash',
+        icon: 'trash-outline',
+        cssClass: 'rojo',
         handler: () => {
           console.log('Delete clicked');
         }
       }, {
         text: 'Share',
-        icon: 'share',
+        icon: 'share-outline',
         handler: () => {
           console.log('Share clicked');
         }
       }, {
         text: 'Play (open modal)',
-        icon: 'caret-forward-circle',
+        icon: 'caret-forward-circle-outline',
         handler: () => {
           console.log('Play clicked');
         }
       }, {
         text: 'Favorite',
-        icon: 'heart',
+        icon: 'heart-outline',
         handler: () => {
           console.log('Favorite clicked');
         }
       }, {
         text: 'Cancel',
-        icon: 'close',
+        icon: 'close-outline',
         role: 'cancel',
         handler: () => {
           console.log('Cancel clicked');

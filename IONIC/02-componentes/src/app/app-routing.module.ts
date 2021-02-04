@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
   {
     path: '',
     redirectTo: 'inicio',
@@ -9,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then(a => a.InicioPageModule)
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
     path: 'alert',
@@ -36,8 +37,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/check/check.module').then( m => m.CheckPageModule)
   },
   {
-    path: 'datetime',
-    loadChildren: () => import('./pages/datetime/datetime.module').then( m => m.DatetimePageModule)
+    path: 'date-time',
+    loadChildren: () => import('./pages/date-time/date-time.module').then( m => m.DateTimePageModule)
   },
   {
     path: 'fab',
@@ -91,6 +92,20 @@ const routes: Routes = [
     path: 'segment',
     loadChildren: () => import('./pages/segment/segment.module').then( m => m.SegmentPageModule)
   },
+  {
+    path: 'slides',
+    loadChildren: () => import('./pages/slides/slides.module').then( m => m.SlidesPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'toast',
+    loadChildren: () => import('./pages/toast/toast.module').then( m => m.ToastPageModule)
+  },
+
+ 
 ];
 
 @NgModule({

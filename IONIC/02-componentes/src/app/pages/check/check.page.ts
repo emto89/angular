@@ -22,25 +22,22 @@ export class CheckPage implements OnInit {
     },
     {
       name: 'success',
-      selected: false
-    },
-    {
-      name: 'danger',
       selected: true
-    }
-
+    },
   ]
+
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onClick(item:any) {
+  onClick( item: any ) {
     console.log(item);
   }
+
   verData() {
-    console.log(this.data);
+    console.log( this.data );
   }
 
 }

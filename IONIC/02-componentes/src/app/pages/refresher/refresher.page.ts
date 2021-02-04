@@ -13,11 +13,14 @@ export class RefresherPage implements OnInit {
 
   ngOnInit() {
   }
-  doRefresh(event) {
+
+  doRefresh( event ) {
+
     setTimeout(() => {
       this.items = Array(20);
       event.target.complete();
-    }, 2000);
+    }, 1500);
+
   }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Componente } from '../interface/interfaces';
+import { Componente } from '../interfaces/interfaces';
 import { delay } from 'rxjs/operators';
 
 @Injectable({

@@ -8,14 +8,14 @@ import { AlertController } from '@ionic/angular';
 })
 export class AlertPage implements OnInit {
 
-  constructor(private alertController: AlertController) { }
+  constructor( private alertCtrl: AlertController ) { }
 
   ngOnInit() {
   }
 
   async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
+    const alert = await this.alertCtrl.create({
+      backdropDismiss: false,
       header: 'Alert',
       subHeader: 'Subtitle',
       message: 'This is an alert message.',
@@ -26,28 +26,31 @@ export class AlertPage implements OnInit {
   }
 
   async presentAlertMultipleButtons() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
+    const alert = await this.alertCtrl.create({
       header: 'Alert',
       subHeader: 'Subtitle',
       message: 'This is an alert message.',
-      buttons: [{
-        text: 'Guardar',
-        handler: () => {
-          console.log("Hizo Click en Guardar");
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            console.log('click en ok!')
+          }
+        },
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'rojo'
         }
-      },{
-        text: 'Cancelar',
-        role: 'cancel'
-      }]
+      ]
     });
 
     await alert.present();
   }
 
+
   async presentAlertPrompt() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
+    const alert = await this.alertCtrl.create({
       header: 'Prompt!',
       inputs: [
         {
@@ -79,13 +82,15 @@ export class AlertPage implements OnInit {
         {
           name: 'name4',
           type: 'date',
-          min: '2017-03-01',
-          max: '2018-01-12'
+          min: '2015-03-01',
+          max: '2025-01-12'
         },
         // input date without min nor max
         {
           name: 'name5',
-          type: 'date'
+          type: 'date',
+          min: '2015-03-01',
+          max: '2025-01-12'
         },
         {
           name: 'name6',
@@ -118,8 +123,8 @@ export class AlertPage implements OnInit {
           }
         }, {
           text: 'Ok',
-          handler: (data:any) => {
-            console.log(data);
+          handler: ( data:any ) => {
+            console.log(data)
           }
         }
       ]
@@ -127,5 +132,6 @@ export class AlertPage implements OnInit {
 
     await alert.present();
   }
+
 
 }

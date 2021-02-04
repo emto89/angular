@@ -13,6 +13,7 @@ export class ButtonPage implements OnInit {
 
   ngOnInit() {
   }
+
   onClick() {
     this.favorito = !this.favorito;
   }

@@ -25,6 +25,15 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-.rojo, .rojo .sc-ion-action-sheet-md{
+
+.rojo, .rojo .sc-ion-action-sheet-md {
     color: red !important;
+}
+
+ion-item {
+    --background: transparent;
+}
+
+ion-searchbar {
+    --box-shadow: none !important;
 }

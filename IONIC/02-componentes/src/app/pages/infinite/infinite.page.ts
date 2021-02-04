@@ -10,7 +10,6 @@ export class InfinitePage implements OnInit {
 
   data: any[] = Array(20);
 
-  //  se usa para no hacer uso desde el html, sino manejarlo desde el ts
   @ViewChild( IonInfiniteScroll ) inifiteScroll: IonInfiniteScroll;
 
   constructor() { }
@@ -18,8 +17,14 @@ export class InfinitePage implements OnInit {
   ngOnInit() {
   }
 
-  loadData(event) {
-    console.log(event);
+
+  loadData( event ) {
+
+    // console.log(event);
+
+    // setTimeout(() => {
+    // event.target.complete();  
+    // }, 1500);
 
     setTimeout(() => {
 
@@ -35,6 +40,7 @@ export class InfinitePage implements OnInit {
       // event.target.complete();
       this.inifiteScroll.complete();
     }, 1500);
+
   }
 
 }
