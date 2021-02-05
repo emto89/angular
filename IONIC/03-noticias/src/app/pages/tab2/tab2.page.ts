@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonSegment } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -8,7 +9,16 @@ import { Component } from '@angular/core';
 export class Tab2Page {
 
 
+  @ViewChild(IonSegment) segment: IonSegment;
+
   categorias = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
+
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.segment.value = this.categorias[0];
+  }
 
   constructor() {}
 
