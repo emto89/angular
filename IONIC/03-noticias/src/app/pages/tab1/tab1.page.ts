@@ -15,12 +15,33 @@ export class Tab1Page {
   
   ngOnInit(): void {
 
-    this.noticiasService.getTopHeadlines().subscribe(resp => {
-      this.noticias.push( ...resp.articles);
-    });
-    console.log(this.noticias);
+    this.cargarNoticias();
 
   }
+  loadData(event) {
+    this.cargarNoticias(event);
+  }
 
+  cargarNoticias(event?) {
+    
+    this.noticiasService.getTopHeadlines().subscribe(resp => {
+      console.log('noticias', this.noticias);
+      
+      if (resp.articles.length === 0 ) {
+        event.target.disabled = true;
+        event.target.complete();
+        return;
+      }
+      
+      this.noticias.push(...resp.articles);
+
+      if (event) {
+        event.target.complete();
+      }
+
+    });
+
+   
+  }
 
 }
