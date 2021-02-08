@@ -9,17 +9,17 @@
       
       <div class="noticia-more">
           <ion-button (click)="lanzarMenu()" fill="clear">
-            <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+            <ion-icon slot="icon-only" name="caret-down-circle"></ion-icon>
           </ion-button>
       </div>
 
     
     </ion-card-subtitle>
      
-     <ion-card-title> {{ noticia.title }} </ion-card-title>
+     <ion-card-title (click)="abrirPagina()"> {{ noticia.title }} </ion-card-title>
 
   </ion-card-header>
-  <ion-img [src]="noticia.urlToImage" *ngIf="noticia.urlToImage"></ion-img>
+  <ion-img  (click)="abrirPagina()" [src]="noticia.urlToImage" *ngIf="noticia.urlToImage"></ion-img>
   <ion-card-content>
     <p>
       {{ noticia.description }}

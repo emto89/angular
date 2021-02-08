@@ -10,7 +10,6 @@ import { Article } from '../../interfaces/interfaces';
 })
 export class Tab2Page {
 
-
   @ViewChild(IonSegment) segment: IonSegment;
   noticias: Article[] = [];
   categorias = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
@@ -36,7 +35,10 @@ export class Tab2Page {
     
     this.noticiasService.getTopHeadlinesCategory(categoria).
       subscribe(resp => {
-        console.log('Noticias',resp);
+        if (resp.articles.length === 0 ) {
+          event.target.complete();
+          return;
+        }
      
         this.noticias.push(...resp.articles);
         

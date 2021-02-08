@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { Article } from '../../interfaces/interfaces';
+// import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { Browser,Share } from "@capacitor/core";
+import { DataLocalService } from '../../services/data-local.service';
+
 
 @Component({
   selector: 'app-noticia',
@@ -11,11 +15,15 @@ export class NoticiaComponent implements OnInit {
 
   @Input() noticia: Article;
   @Input() indice: number;
-  constructor(private actionSheetCtrl: ActionSheetController) { }
+  constructor(private actionSheetCtrl: ActionSheetController,
+    private datalocalService: DataLocalService) { }
 
   ngOnInit() {}
 
-
+  abrirPagina() {
+    // const browser = this.iab.create( this.noticia.url,'_system');
+    Browser.open({ url: `${this.noticia.url}` });
+  }
   async lanzarMenu() {
     const actionSheet = await this.actionSheetCtrl.create({
       buttons: [ {
@@ -23,7 +31,12 @@ export class NoticiaComponent implements OnInit {
         icon: 'share',
         cssClass: 'action-dark',
         handler: () => {
-          console.log('Share clicked');
+          Share.share({
+            title: this.noticia.title,
+            text: this.noticia.description,
+            url: this.noticia.url,
+            dialogTitle:'Share'
+          })
         }
       },
       {
@@ -31,7 +44,7 @@ export class NoticiaComponent implements OnInit {
         icon: 'star',
         cssClass: 'action-dark',
         handler: () => {
-          console.log('Favorito clicked');
+          this.datalocalService.guardarNoticias(this.noticia);
         }
       },{
         text: 'Cancel',
