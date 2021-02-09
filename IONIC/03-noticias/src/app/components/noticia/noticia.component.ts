@@ -15,6 +15,8 @@ export class NoticiaComponent implements OnInit {
 
   @Input() noticia: Article;
   @Input() indice: number;
+  @Input() enFavoritos;
+  
   constructor(private actionSheetCtrl: ActionSheetController,
     private datalocalService: DataLocalService) { }
 
@@ -25,6 +27,33 @@ export class NoticiaComponent implements OnInit {
     Browser.open({ url: `${this.noticia.url}` });
   }
   async lanzarMenu() {
+
+    let guardarBorrarBtn;
+
+
+    if (!this.enFavoritos) {
+      guardarBorrarBtn = 
+      {
+        text: 'Favorito',
+        icon: 'star',
+        cssClass: 'action-dark',
+        handler: () => {
+          this.datalocalService.guardarNoticias(this.noticia);
+        }
+      }
+    } else {
+      guardarBorrarBtn = 
+      {
+        text: 'Favorito',
+        icon: 'trash',
+        cssClass: 'action-dark',
+        handler: () => {
+          this.datalocalService.borrarNoticias(this.noticia);
+        }
+      }
+
+    }
+
     const actionSheet = await this.actionSheetCtrl.create({
       buttons: [ {
         text: 'Compartir',
@@ -39,14 +68,9 @@ export class NoticiaComponent implements OnInit {
           })
         }
       },
+        guardarBorrarBtn
+      , 
       {
-        text: 'Favorito',
-        icon: 'star',
-        cssClass: 'action-dark',
-        handler: () => {
-          this.datalocalService.guardarNoticias(this.noticia);
-        }
-      },{
         text: 'Cancel',
         icon: 'close',
         role: 'cancel',

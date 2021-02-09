@@ -25,7 +25,7 @@ export class Tab1Page {
   cargarNoticias(event?) {
     
     this.noticiasService.getTopHeadlines().subscribe(resp => {
-      console.log('noticias', this.noticias);
+      // console.log('noticias', this.noticias);
       
       if (resp.articles.length === 0 ) {
         event.target.disabled = true;
