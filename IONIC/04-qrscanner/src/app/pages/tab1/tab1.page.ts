@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { DataLocalService } from '../../services/data-local.service';
 
 @Component({
   selector: 'app-tab1',
@@ -8,29 +9,42 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 })
 export class Tab1Page {
 
-  constructor( private barcodeScanner: BarcodeScanner) {}
+  swiperOpts = {
+    allowSlidePrev: false,
+    allowSlideNext: false
+  }
+
+  constructor(private barcodeScanner: BarcodeScanner,
+              private dataLocal: DataLocalService) { }
 
   ionViewDidEnter() {
-    console.log(" View Did Enter ");
+    // console.log(" View Did Enter ");
   }
   ionViewDidLeave() {
-    console.log(" View Did Leave ");
+    // console.log(" View Did Leave ");
   }
 
   ionViewWillEnter() {
-    console.log(" View Will enter ");
+    // console.log(" View Will enter ");
     this.scan(); 
   }
 
   ionViewWillLeave() {
-    console.log(" View Will Leave ");
+    // console.log(" View Will Leave ");
   }
 
   scan() {
     this.barcodeScanner.scan().then(barcodeData => {
-      console.log('Barcode data', barcodeData);
-     }).catch(err => {
-         console.log('Error', err);
+      // console.log('Barcode data', barcodeData);
+      if (!barcodeData.cancelled) {
+        this.dataLocal.guardarRegistro(barcodeData.format, barcodeData.text);
+      }
+
+    }).catch(err => {
+       
+      console.log('Error', err);
+      //  ELIMINAR CUANDO SE VAYA A DESPLEGAR 
+      this.dataLocal.guardarRegistro('QRCODE',"https://www.youtube.com/");
      });
   }
 
