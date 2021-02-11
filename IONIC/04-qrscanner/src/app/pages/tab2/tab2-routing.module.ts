@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Tab2Page } from './tab2.page';
+import { MapaPage } from "../mapa/mapa.page";
 
 const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  },
+  {
+    path: 'mapa/:geo',
+    component: MapaPage,
   }
 ];
 

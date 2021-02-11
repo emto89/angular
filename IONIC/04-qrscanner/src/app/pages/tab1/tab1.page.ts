@@ -44,7 +44,7 @@ export class Tab1Page {
        
       console.log('Error', err);
       //  ELIMINAR CUANDO SE VAYA A DESPLEGAR 
-      this.dataLocal.guardarRegistro('QRCODE',"https://www.youtube.com/");
+      this.dataLocal.guardarRegistro('GEO:',"geo:40.73151796986687,-74.06087294062502");
      });
   }
 
