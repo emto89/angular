@@ -79,8 +79,7 @@ export class DataLocalService {
     this.crearArchivoFisico( arrTemp.join('') );
   }
   crearArchivoFisico( text: string) {
-    this.file.checkFile(this.file.dataDirectory, 'registros.csv')
-      .then(existe => {
+    this.file.checkFile(this.file.dataDirectory, 'registros.csv').then(existe => {
         console.log('Existe Archivo?', existe);
         return this.escribirEnArchivo( text );
       })

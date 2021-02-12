@@ -1,0 +1,46 @@
+IMPORTANTE BAJAR EL SERVICIO DE IONIC ANTES DE REALIZAR ESTOS PASOS.
+
+Asignar Libreria de PWA en el desarrollo 
+
+-> ng add @angular/pwa  
+
+-> OPCION 1 ionic build --prod --server-worker
+
+ INSTALAR FIREBASE
+
+ ->npm install -g firebase-tools
+
+ ->firebase login
+
+
+ ->firebase init  HACERLO DENTRO DE LA CARPETA DEL PROYECTO NO DE LA CARPETA WWW
+
+
+ -> Escoger la opcion hosting usa la tecla de barra espaciadora y despues la tecla "enter"
+
+
+ What do you want to use as your public directory? digitar "www"
+
+ nos pregunta si es una Single-page escoger "Si"
+
+ Set up automatic builds and deploys with GitHub? escoger "No"
+
+  File www/index.html already exists. Overwrite? escoger "No"
+
+  ir a la consola de firebase, crear proyecto 
+
+  -> ir a la opcion de hosting
+
+  -> Empezar y seguir los pasos 
+
+  -> Ir a configuracion del proyecto (engranaje de Informacion general ubicado en la parte susperior izquierda de la pantalla)
+
+  -> Seleccionar ID-Proyecto
+
+  -> ir a su ID de desarrollo
+
+  -> firebase use --add crudangular-26eed
+
+  -> OPCION 2 ionic build --prod --server-worker
+
+  -> Firebase deploy
